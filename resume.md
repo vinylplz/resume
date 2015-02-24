@@ -1,6 +1,7 @@
 <div align=right>greg.forties@gmail.com </div>
 <div align=right>1902 Heatherway Ln #1B, New Lenox, IL 60451</div>
 <div align=right>708-414-0489 (h) | 312-479-7654 (c) | greg.forties (skype)</div>
+<div align=right>https://github.com/vinylplz | www.linkedin.com/in/gforties</div>
 
 Gregory D. Forties
 ---------------
