@@ -24,12 +24,14 @@ January 2013 – May 2014 (1 year 5 months)
 Sole devops systems administrator for a white-label gambling website and mobile application, supporting a small talented agile development team.
 
 Responsibilities:
+
 + Design, automate, and support a fault-tolerant, scalable, multi-AZ AWS virtual private cloud for company's "for fun" B2B gambling websites and mobile apps (snocasino.play4funnetwork.com, aplay.play4funnetwork.com, *.play4funnetwork.com) 
 + Provide and support common internet and intranet services including email (postfix), git (stash), DNS (Route53), continuous integration (jenkins), database administration (mysql/RDS), python web hosting (apache, django, mod_wsgi), and cloud automation (chef)
 + Work closely with developers, QA testers, and management to ensure new features are written, tested, and deployed in a timely and safe manner
 + Provide leadership and direction to novice team members, give training on emerging technology, and run daily scrum meetings (in the absence of management)
 
 Accomplishments:
+
 + Transitioned development from SVN to git for code management
 + Developed custom application for automagically managing cloudwatch alarms
 + Automated deployments, including database changes and roll-back option using jenkins, chef, boto
@@ -43,12 +45,14 @@ January 2011 – December 2012 (2 years)
 One of two senior sysadmins responsible for maintaining a classic VMware/Linux data center hosting the django-based playerslife.com website and its java/tomcat backend services.
 
 Responsibilities:
+
 + Support development and management with new features and environment/server requests
 + Manage application deployment timeframe, communication, code deploy and mysql-cluster database
 + Maintain very strict uptime for back-end java services and associated mysql-cluster (NDB) database
 + Liaison with internal and customer technical staff to troubleshoot off-site client network connectivity and configuration issues
 
 Accomplishments:
+
 + 100% uptime for backend java service and mysql-cluster database
 + Automated software deployments using Fabric (python)
 + Setup Selenium Grid server for automating cross-platform browser testing
@@ -86,6 +90,7 @@ Advanced technical helpdesk and NOC engineer
 + Write custom Java/C# applications and code examples using our custom API
 
 Key Accomplishments:
+
 + Help transition the company from Microsoft solutions to open-source/Linux
 + Setup RHEL/Xen server for internal Linux training
 + Create custom internal reports for management using standard unix tools, perl, Excel
