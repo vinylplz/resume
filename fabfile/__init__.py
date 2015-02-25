@@ -19,7 +19,7 @@ project_root = os.path.normpath(os.path.join(__file__, os.path.pardir,
                os.path.pardir))
 build_dir = os.path.join(project_root, 'formats')
 
-all_build_formats = ['docx', 'html', 'html5', 'pdf']
+all_build_formats = ['docx', 'html', 'html5', 'pdf', 'plain', 'rtf', 'asciidoc', 'odt']
 disabled_build_formats = ['pdf']
 default_build_formats = [fmt for fmt in set(all_build_formats) - set(disabled_build_formats)]
 
@@ -51,7 +51,12 @@ def _convert_to_fmt(output_fmt):
     output_file = os.path.join(build_dir, resume_name.split('.')[0] + '.' +
                   output_fmt)
     with msg("Building {}".format(output_fmt)):
-        local('pandoc {} -o {}'.format(input_file, output_file))
+        if output_fmt == 'plain':
+            output_file = output_file.replace('.plain','.txt')
+            local('pandoc {} -o {} -t plain'.format(input_file, output_file))
+        else:
+            local('pandoc {} -o {}'.format(input_file, output_file))
+
 
 @task
 def install_pandoc(with_pdf=True):
