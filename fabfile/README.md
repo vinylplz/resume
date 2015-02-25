@@ -11,10 +11,11 @@ Done.
 $
 ```
 
-fabric homepage: [http://fabfile.org] 
-fabric docs:     [http://docs.fabfile.org/en/1.10/]
+fabric homepage: [http://fabfile.org]   
+fabric docs:     [http://docs.fabfile.org/en/1.10/]  
 
-You will also need `pandoc` installed.  Pandoc is a document conversion utility.
-pandoc homepage: [http://johnmacfarlane.net/pandoc/]
+You will also need `pandoc` installed.  Pandoc is a document conversion utility.  
+pandoc homepage: [http://johnmacfarlane.net/pandoc/]  
+
 
 
