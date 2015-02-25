@@ -1,13 +1,19 @@
 language: python
 python:
-  - "2.7"
+- '2.7'
 
-# command to install dependancies
 install:
-  - "pip install -r fabfile/requirements.txt"
+- pip install -r fabfile/requirements.txt
 
 script:
-  - fab install_pandoc
-  - fab build
+- fab install_pandoc
+- fab build
 
-
+deploy:
+  provider: releases
+  api_key:
+    secure: S1xNa3S2FQIC3dVN8pYN3XH+9OCexk1A6Z7j3JvjbKfFJ+03Q/ejZxQzm9Szw0h6ZZZJ1Hj4XKj5zRLyafIte67czLP5G1RME7N3TYsx+qbIfeU87fphrRIS88RUSHEE/KwVkMTgxr1e4O+456nQxqtSlmAT602g4qvd6ljn5ss=
+  file: ./formats/*
+  skip_cleanup: true
+  on:
+    repo: vinylplz/resume
