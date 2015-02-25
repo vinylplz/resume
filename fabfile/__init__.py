@@ -19,15 +19,15 @@ project_root = os.path.normpath(os.path.join(__file__, os.path.pardir,
                os.path.pardir))
 build_dir = os.path.join(project_root, 'formats')
 
-all_build_formats = ['docx', 'html', 'html5', 'pdf', 'plain', 'rtf', 'asciidoc', 'odt']
-disabled_build_formats = ['pdf']
+all_build_formats = ['docx', 'html', 'html5', 'pdf', 'plain', 'asciidoc', 'odt']
+disabled_build_formats = ['pdf', 'rtf']
 default_build_formats = [fmt for fmt in set(all_build_formats) - set(disabled_build_formats)]
 
 
 @task
 def build(type='default'):
     """
-    :$type=default - convert resume to file $type. Ex. fab build:docx 
+    :$type=default - convert resume to file $type. Ex. fab build:docx
     """
     if type == 'all':
         formats = all_build_formats
@@ -45,7 +45,7 @@ def build(type='default'):
         _convert_to_fmt(fmt)
 
     puts("Finished building.")
-   
+
 def _convert_to_fmt(output_fmt):
     input_file = os.path.join(project_root, resume_name)
     output_file = os.path.join(build_dir, resume_name.split('.')[0] + '.' +
@@ -79,7 +79,7 @@ def install_pandoc(with_pdf=True):
             unsupported_os = True
     else:
         unsupported_os = True
-    
+
     if unsupported_os == True:
         puts("Unsupported OS. See the following for installation instructions")
         puts("http://johnmacfarlane.net/pandoc/installing.html")
