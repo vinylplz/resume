@@ -14,7 +14,7 @@ from platform import linux_distribution, system
 
 from contextlib import contextmanager
 
-resume_name = 'resume.md'
+resume_name = 'greg_forties_resume.md'
 project_root = os.path.normpath(os.path.join(__file__, os.path.pardir,
                os.path.pardir))
 build_dir = os.path.join(project_root, 'formats')
