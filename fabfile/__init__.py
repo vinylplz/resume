@@ -18,7 +18,9 @@ project_root = os.path.normpath(os.path.join(__file__, os.path.pardir,
 build_dir = os.path.join(project_root, 'formats')
 
 all_build_formats = ['docx', 'html', 'html5', 'pdf']
-default_build_formats = all_build_formats
+disabled_build_formats = ['pdf']
+default_build_formats = [fmt for fmt in set(all_build_formats) - set(disabled_build_formats)]
+
 
 @task
 def build(type='default'):
