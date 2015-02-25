@@ -69,7 +69,7 @@ def install_pandoc(with_pdf=True):
     if system_type == 'Linux':
         distro = linux_distribution()[0]
         puts("Linux Distro: {}".format(distro))
-        if distro == 'Ubuntu':
+        if distro == 'Ubuntu' or distro == 'debian':
             packages = ['pandoc']  #, 'pandoc-citeproc']
             if with_pdf == True:
                 packages += ['texlive']
