@@ -26,7 +26,7 @@ def build_docx():
     Build a docx document from input file
     """
     with msg("Building docx"):
-        local('pandoc resume.md -o resume.docx')
+        local('pandoc resume.md -o formats/resume.docx')
 
 
 
