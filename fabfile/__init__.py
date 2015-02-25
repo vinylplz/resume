@@ -8,6 +8,8 @@ import os
 import sys
 
 from fabric.api import abort, local, task, hide, puts
+from platform import linux_distribution, system
+
 #from string import Template
 
 from contextlib import contextmanager
@@ -25,7 +27,7 @@ default_build_formats = [fmt for fmt in set(all_build_formats) - set(disabled_bu
 @task
 def build(type='default'):
     """
-    :$type - convert resume to file $type. Ex. fab build:docx 
+    :$type=default - convert resume to file $type. Ex. fab build:docx 
     """
     if type == 'all':
         formats = all_build_formats
@@ -49,7 +51,33 @@ def _convert_to_fmt(output_fmt):
     output_file = os.path.join(build_dir, resume_name.split('.')[0] + '.' +
                   output_fmt)
     with msg("Building {}".format(output_fmt)):
-         local('pandoc {} -o {}'.format(input_file, output_file))
+        local('pandoc {} -o {}'.format(input_file, output_file))
+
+@task
+def install_pandoc(with_pdf=True):
+    """
+    :with_pdf=True - install pandoc command line tools needed for build().  if you don't need pdf, install_pandoc:with_pdf=False
+    """
+    unsupported_os = False
+    system_type = system()
+    puts("System Type: {}".format(system_type))
+    if system_type == 'Linux':
+        distro = linux_distribution()[0]
+        puts("Linux Distro: {}".format(distro))
+        if distro == 'Ubuntu':
+            packages = ['pandoc']  #, 'pandoc-citeproc']
+            if with_pdf == True:
+                packages += ['texlive']
+            msg("Installing pandoc")
+            local('sudo apt-get install -y {}'.format(' '.join(tuple(packages))))
+        else:
+            unsupported_os = True
+    else:
+        unsupported_os = True
+    
+    if unsupported_os == True:
+        puts("Unsupported OS. See the following for installation instructions")
+        puts("http://johnmacfarlane.net/pandoc/installing.html")
 
 
 @contextmanager
