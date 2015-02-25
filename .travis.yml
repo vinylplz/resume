@@ -8,12 +8,20 @@ install:
 script:
 - fab install_pandoc
 - fab build
+- fab build:pdf
 
 deploy:
   provider: releases
   api_key:
     secure: S1xNa3S2FQIC3dVN8pYN3XH+9OCexk1A6Z7j3JvjbKfFJ+03Q/ejZxQzm9Szw0h6ZZZJ1Hj4XKj5zRLyafIte67czLP5G1RME7N3TYsx+qbIfeU87fphrRIS88RUSHEE/KwVkMTgxr1e4O+456nQxqtSlmAT602g4qvd6ljn5ss=
-  file: formats/greg_forties_resume.docx
+  file: 
+    - build/greg_forties_resume.docx
+    - build/greg_forties_resume.odt
+    - build/greg_forties_resume.html
+    - build/greg_forties_resume.pdf
+    - build/greg_forties_resume.txt
+    - build/greg_forties_resume.asciidoc
+    - greg_forties_resume.md
   skip_cleanup: true
   on:
     tags: true

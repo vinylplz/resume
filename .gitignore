@@ -3,3 +3,6 @@
 
 # ignore pandoc error log
 missfont.log
+
+# ignore generated files
+build/*

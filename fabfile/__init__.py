@@ -17,10 +17,11 @@ from contextlib import contextmanager
 resume_name = 'greg_forties_resume.md'
 project_root = os.path.normpath(os.path.join(__file__, os.path.pardir,
                os.path.pardir))
-build_dir = os.path.join(project_root, 'formats')
+build_dir = os.path.join(project_root, 'build')
 
+## NOTE: if you change these, update .travis.yml if you want them in the release
 all_build_formats = ['docx', 'html', 'html5', 'pdf', 'plain', 'asciidoc', 'odt']
-disabled_build_formats = ['pdf', 'rtf']
+disabled_build_formats = ['pdf', 'rtf', 'html5']
 default_build_formats = [fmt for fmt in set(all_build_formats) - set(disabled_build_formats)]
 
 
