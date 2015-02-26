@@ -17,6 +17,54 @@ The basic workflow looks like this:
   * triggers another travis build AND creates a [release][latest resume] on githib using the [travis github release provider](http://docs.travis-ci.com/user/deployment/releases/)
 6. enjoy not having to edit dozens of files
 
+
+# Example local build
+
+```bash
+$ ls -l build 
+total 0
+$ fab install_pandoc
+System Type: Linux
+Linux Distro: Ubuntu
+[localhost] local: sudo apt-get install -y pandoc texlive
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+texlive is already the newest version.
+pandoc is already the newest version.
+The following packages were automatically installed and are no longer required:
+  linux-headers-3.13.0-32 linux-headers-3.13.0-32-lowlatency
+  linux-image-3.13.0-32-lowlatency
+Use 'apt-get autoremove' to remove them.
+0 upgraded, 0 newly installed, 0 to remove and 26 not upgraded.
+
+Done.
+$ fab build
+Building plain...done.
+Building docx...done.
+Building html...done.
+Building odt...done.
+Building asciidoc...done.
+Finished building.
+
+Done.
+$ # pdf not build be default due to dependancies, so build it separately:
+$ fab build:pdf
+Building pdf...done.
+Finished building.
+
+Done.
+$ ls -l build 
+total 148
+-rw-rw-r-- 1 gforties gforties  6264 Feb 26 16:20 greg_forties_resume.asciidoc
+-rw-rw-r-- 1 gforties gforties 11729 Feb 26 16:20 greg_forties_resume.docx
+-rw-rw-r-- 1 gforties gforties  6823 Feb 26 16:20 greg_forties_resume.html
+-rw-rw-r-- 1 gforties gforties 13899 Feb 26 16:20 greg_forties_resume.odt
+-rw-rw-r-- 1 gforties gforties 97510 Feb 26 16:20 greg_forties_resume.pdf
+-rw-rw-r-- 1 gforties gforties  5829 Feb 26 16:20 greg_forties_resume.txt
+$ 
+```
+
 # See Also
 **Fabric**  
 [Homepage][fabric] - fabric's homepage  
