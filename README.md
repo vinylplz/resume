@@ -32,10 +32,6 @@ Building dependency tree
 Reading state information... Done
 texlive is already the newest version.
 pandoc is already the newest version.
-The following packages were automatically installed and are no longer required:
-  linux-headers-3.13.0-32 linux-headers-3.13.0-32-lowlatency
-  linux-image-3.13.0-32-lowlatency
-Use 'apt-get autoremove' to remove them.
 0 upgraded, 0 newly installed, 0 to remove and 26 not upgraded.
 
 Done.
