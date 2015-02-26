@@ -48,7 +48,7 @@ Building asciidoc...done.
 Finished building.
 
 Done.
-$ # pdf not build be default due to dependancies, so build it separately:
+$ # pdf not built by default due to dependancies, so build it separately:
 $ fab build:pdf
 Building pdf...done.
 Finished building.
